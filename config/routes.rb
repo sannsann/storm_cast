@@ -1,14 +1,13 @@
 StormCast::Application.routes.draw do
+  resources :users
   
-  get "users/new"
-
   root to: 'static_pages#home'
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   
-  match '/signup',  to: 'users#new'
+  match '/signup',  to: 'users#new',          via: 'get'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
